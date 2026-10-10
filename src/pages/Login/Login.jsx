@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { supabaseConfigurado } from '../../lib/supabaseClient';
@@ -10,6 +10,9 @@ export default function Login() {
   const [senha, setSenha] = useState('');
   const [erro, setErro] = useState('');
   const [enviando, setEnviando] = useState(false);
+
+  // A tela de entrada é sempre clara, com o degradê da marca.
+  useEffect(() => { document.documentElement.dataset.theme = 'light'; }, []);
 
   if (!carregando && sessao) return <Navigate to="/geral" replace />;
 
@@ -30,11 +33,11 @@ export default function Login() {
     <div className="login">
       <section className="login__marca">
         <span className="login__logo" aria-hidden="true">
-          M
+          H
         </span>
-        <h1>Suas contas, mês a mês.</h1>
+        <h1>Doçuras da Hav's</h1>
         <p>
-          Veja quanto entrou, quanto falta pagar e o que vence nos próximos dias — tudo num só lugar.
+          Recebimentos, contas e o que vence nos próximos dias da confeitaria — tudo num só lugar.
         </p>
       </section>
 

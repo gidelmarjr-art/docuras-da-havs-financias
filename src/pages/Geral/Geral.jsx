@@ -82,7 +82,9 @@ export default function Geral() {
 
   return (
     <div className="geral">
-      <PageHeader titulo="Geral" descricao="Tudo do mês da confeitaria, em detalhe." />
+      <div className="geral__banner">
+        <PageHeader titulo="Geral" descricao="Tudo do mês da confeitaria, em detalhe." />
+      </div>
 
       {erro && <p className="aviso-erro geral__erro">Não foi possível carregar os dados: {erro}</p>}
 

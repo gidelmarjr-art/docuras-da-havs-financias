@@ -17,14 +17,14 @@ const ITENS = [
 export default function Sidebar() {
   const { sair, sessao } = useAuth();
   const { perfil } = usePerfil();
-  const [temaClaro, setTemaClaro] = useState(false);
+  const [temaClaro, setTemaClaro] = useState(true);
 
   useEffect(() => {
     if (!perfil) return;
     const chave = `tema:${perfil.id}`;
     const salvo = localStorage.getItem(chave);
-    // Começa no escuro; a preferência fica individual.
-    setTemaClaro(salvo === 'claro');
+    // Começa no tema claro (laranja e branco); a preferência fica individual.
+    setTemaClaro(salvo ? salvo === 'claro' : true);
   }, [perfil]);
 
   useEffect(() => {
@@ -37,9 +37,9 @@ export default function Sidebar() {
     <aside className="sidebar">
       <div className="sidebar__marca">
         <span className="sidebar__logo" aria-hidden="true">
-          M
+          H
         </span>
-        <span className="sidebar__nome">Minhas Finanças</span>
+        <span className="sidebar__nome">Doçuras da Hav's</span>
       </div>
 
       <nav className="sidebar__nav" aria-label="Principal">

@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: minmax(320px, 5fr) 6fr;
   min-height: 100%;
+  background: var(--degrade);
 }
 .login__marca {
   display: flex;
@@ -9,9 +10,7 @@
   justify-content: center;
   gap: 16px;
   padding: 48px clamp(28px, 5vw, 72px);
-  border-right: 1px solid var(--linha);
-  background: var(--lateral);
-  color: var(--tinta);
+  color: var(--sobre-degrade);
 }
 .login__logo {
   display: grid;
@@ -19,8 +18,9 @@
   width: 48px;
   height: 48px;
   border-radius: 14px;
-  background: var(--destaque);
-  color: var(--sobre-destaque);
+  background: #ffffff;
+  color: #eb6919;
+  box-shadow: 0 8px 20px -8px rgba(120, 60, 20, .5);
   font-family: var(--fonte-titulo);
   font-size: 26px;
   font-weight: 700;
@@ -29,11 +29,11 @@
   max-width: 14ch;
   font-size: clamp(32px, 4.2vw, 52px);
   line-height: 1.05;
-  color: var(--tinta);
+  color: var(--sobre-degrade);
 }
 .login__marca p {
   max-width: 38ch;
-  color: var(--tinta-suave);
+  color: var(--sobre-degrade);
   font-size: 17px;
 }
 
@@ -47,7 +47,11 @@
   flex-direction: column;
   gap: 16px;
   width: 100%;
-  max-width: 380px;
+  max-width: 400px;
+  padding: 32px;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 24px 60px -24px rgba(120, 60, 20, .35);
 }
 .login__form h2 {
   font-size: 28px;
@@ -61,11 +65,8 @@
 }
 
 @media (max-width: 800px) {
-  .login__marca {
-    border-right: 0;
-    border-bottom: 1px solid var(--linha);
-  }
   .login {
+    background: linear-gradient(180deg, #eb6919 0%, #f08b4f 22%, #f5ae86 45%, #fad1bd 70%, #fff4f4 100%);
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
   }

@@ -1,62 +1,69 @@
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 
-  /* Superfícies: do mais escuro (menu lateral) ao mais claro (item em destaque) */
-  --lateral: #070708;
-  --fundo: #0b0b0c;
-  --superficie: #151517;
-  --fundo-suave: #1f1f22;
-  --elevado: #29292d;
+  /* Doçuras da Hav's: laranja #eb6919 e branco */
+  --lateral: #ffffff;
+  --fundo: #fff7f2;
+  --superficie: #ffffff;
+  --fundo-suave: #fdeee4;
+  --elevado: #fbdfcd;
 
-  /* Texto e linhas */
-  --tinta: #ececee;
-  --tinta-suave: #9a9aa2;
-  --linha: #2a2a2e;
-  --linha-forte: #3f3f45;
+  --tinta: #2e1a0e;
+  --tinta-suave: #7d5f4d;
+  --linha: #f3e1d5;
+  --linha-forte: #e8c8b3;
 
-  /* Destaque neutro (botões principais, aba ativa, barra de progresso) */
-  --destaque: #f1f1f2;
-  --destaque-forte: #d2d2d6;
-  --destaque-suave: #29292d;
-  --sobre-destaque: #0b0b0c;
+  /* Destaque: laranja da marca (botões principais, aba ativa, barra de progresso) */
+  --destaque: #eb6919;
+  --destaque-forte: #c4510c;
+  --destaque-suave: #fde3d3;
+  --sobre-destaque: #ffffff;
+  --foco: rgba(235, 105, 25, 0.35);
 
-  /* Cores de situação: as únicas fora do preto e cinza, para não perder o sentido */
-  --positivo: #7fd3a4;
-  --positivo-suave: #15271d;
-  --ambar: #e3b45f;
-  --ambar-claro: #2b2314;
-  --vermelho: #f0857a;
-  --vermelho-claro: #2d1a18;
+  /* Cores de situação */
+  --positivo: #1f7a4a;
+  --positivo-suave: #e0f3e8;
+  --ambar: #9a6100;
+  --ambar-claro: #fff0cf;
+  --vermelho: #b3372d;
+  --vermelho-claro: #fde5e2;
 
-  --sombra: 0 1px 2px rgba(0, 0, 0, 0.5), 0 14px 32px -18px rgba(0, 0, 0, 0.8);
+  /* Degradê da marca (laranja → branco), usado no login e na aba Geral */
+  --degrade: linear-gradient(90deg, #eb6919 0%, #f08b4f 25%, #f5ae86 50%, #fad1bd 75%, #fff4f4 100%);
+  --sobre-degrade: #2e1a0e;
+
+  --sombra: 0 1px 2px rgba(120, 60, 20, 0.08), 0 14px 32px -18px rgba(120, 60, 20, 0.28);
+  --sombra-barra: 0 -6px 24px rgba(120, 60, 20, 0.14);
   --fonte-titulo: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
   --fonte-corpo: 'Figtree', 'Segoe UI', system-ui, sans-serif;
   --raio-painel: 16px;
   --raio-campo: 10px;
 }
 
-:root[data-theme='light'] {
-  color-scheme: light;
-  --lateral: #f6f6f7;
-  --fundo: #f1f1f3;
-  --superficie: #ffffff;
-  --fundo-suave: #ebebee;
-  --elevado: #dedee3;
-  --tinta: #17171a;
-  --tinta-suave: #62626c;
-  --linha: #d5d5da;
-  --linha-forte: #b9b9c1;
-  --destaque: #1a1a1d;
-  --destaque-forte: #35353a;
-  --destaque-suave: #dedee3;
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --lateral: #120b07;
+  --fundo: #18100b;
+  --superficie: #211711;
+  --fundo-suave: #2c1f17;
+  --elevado: #3a2a1f;
+  --tinta: #f6ece5;
+  --tinta-suave: #b7a294;
+  --linha: #34261c;
+  --linha-forte: #4d392b;
+  --destaque: #eb6919;
+  --destaque-forte: #f58a4b;
+  --destaque-suave: #3d2415;
   --sobre-destaque: #ffffff;
-  --positivo: #207046;
-  --positivo-suave: #dff2e6;
-  --ambar: #9a6100;
-  --ambar-claro: #fff0cf;
-  --vermelho: #b3372d;
-  --vermelho-claro: #fde5e2;
-  --sombra: 0 1px 2px rgba(0, 0, 0, .08), 0 14px 32px -18px rgba(0, 0, 0, .18);
+  --foco: rgba(245, 138, 75, 0.45);
+  --positivo: #7fd3a4;
+  --positivo-suave: #15271d;
+  --ambar: #e3b45f;
+  --ambar-claro: #2b2314;
+  --vermelho: #f0857a;
+  --vermelho-claro: #2d1a18;
+  --sombra: 0 1px 2px rgba(0, 0, 0, 0.5), 0 14px 32px -18px rgba(0, 0, 0, 0.8);
+  --sombra-barra: 0 -6px 24px rgba(0, 0, 0, 0.6);
 }
 
 *,
@@ -108,7 +115,7 @@ select {
 }
 
 :focus-visible {
-  outline: 3px solid rgba(255, 255, 255, 0.55);
+  outline: 3px solid var(--foco);
   outline-offset: 2px;
 }
 
@@ -197,7 +204,7 @@ select {
 .campo input:focus,
 .campo select:focus {
   border-color: var(--destaque);
-  outline: 3px solid rgba(255, 255, 255, 0.16);
+  outline: 3px solid var(--foco);
   outline-offset: 0;
 }
 

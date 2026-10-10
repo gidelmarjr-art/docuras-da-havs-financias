@@ -58,4 +58,3 @@ Este projeto foi desenvolvido utilizando tecnologias modernas do ecossistema web
 * **Histórico e Projeções:** Acompanhamento de meses passados[cite: 3] e painel de projeções futuras[cite: 10].
 
 ---
-=======
