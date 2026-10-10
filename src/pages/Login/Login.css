@@ -1,17 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
 .login {
   display: grid;
-  grid-template-columns: minmax(400px, 1fr) 1.1fr;
-  min-height: 100%;
+  grid-template-columns: minmax(320px, 1fr) 1.1fr;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
   background: var(--degrade);
 }
+
 .login__marca {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 20px;
-  padding: 48px clamp(60px, 10vw, 160px);
+  padding: 48px clamp(40px, 8vw, 140px);
   color: var(--sobre-degrade);
 }
+
 .login__logo {
   display: grid;
   place-items: center;
@@ -20,75 +28,114 @@
   border-radius: 16px;
   background: #ffffff;
   color: #eb6919;
-  box-shadow: 0 10px 24px -8px rgba(120, 60, 20, .5);
+  box-shadow: 0 10px 24px -8px rgba(120, 60, 20, 0.5);
   font-family: var(--fonte-titulo);
   font-size: 32px;
   font-weight: 700;
 }
+
 .login__marca h1 {
   max-width: 14ch;
-  font-size: clamp(40px, 5.5vw, 68px);
+  font-size: clamp(38px, 5vw, 64px);
   line-height: 1.05;
   color: var(--sobre-degrade);
 }
+
 .login__marca p {
   max-width: 40ch;
   color: var(--sobre-degrade);
-  font-size: 20px;
+  font-size: 19px;
+  line-height: 1.4;
 }
 
 .login__painel {
   display: grid;
   place-items: center;
-  padding: 32px 48px;
+  padding: 32px 36px;
 }
+
 .login__form {
   display: flex;
   flex-direction: column;
   gap: 20px;
   width: 100%;
-  max-width: 520px;
+  max-width: 500px;
   padding: 48px;
   border-radius: 24px;
   background: #ffffff;
-  box-shadow: 0 28px 70px -24px rgba(120, 60, 20, .4);
+  box-shadow: 0 28px 70px -24px rgba(120, 60, 20, 0.4);
 }
+
 .login__form h2 {
-  font-size: 36px;
+  font-size: 34px;
 }
+
 .login__sub {
   margin-top: -8px;
   color: var(--tinta-suave);
   font-size: 16px;
 }
+
 .login__form code {
   font-size: 13px;
 }
 
-@media (max-width: 800px) {
+/* Regras para Aparelhos Menores / Celulares */
+@media (max-width: 850px) {
   .login {
-    background: linear-gradient(180deg, #eb6919 0%, #f08b4f 22%, #f5ae86 45%, #fad1bd 70%, #fff4f4 100%);
+    background: linear-gradient(180deg, #eb6919 0%, #f08b4f 25%, #f5ae86 50%, #fad1bd 75%, #fff4f4 100%);
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
+    min-height: 100vh;
   }
+
   .login__marca {
-    gap: 10px;
-    padding: 28px 24px;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    padding: 56px 20px 20px 20px; /* Aumentado padding superior para descer o topo */
   }
+
+  /* Exibe o texto explicativo também no mobile com tamanho adequado */
   .login__marca p {
-    display: none;
+    display: block;
+    font-size: 14px;
+    max-width: 32ch;
+    opacity: 0.95;
   }
+
   .login__logo {
-    width: 40px;
-    height: 40px;
-    font-size: 22px;
+    width: 48px;
+    height: 48px;
+    font-size: 26px;
+    border-radius: 14px;
   }
+
   .login__marca h1 {
     max-width: none;
     font-size: 28px;
   }
+
   .login__painel {
     align-items: start;
-    padding-top: 28px;
+    padding: 24px 20px 48px 20px; /* Margem ajustada para descer e dar respiro no fundo */
+    width: 100%;
+  }
+
+  .login__form {
+    width: 100%;
+    max-width: 100%;
+    padding: 32px 24px;
+    gap: 18px;
+    border-radius: 20px;
+    box-shadow: 0 16px 40px -16px rgba(120, 60, 20, 0.25);
+  }
+
+  .login__form h2 {
+    font-size: 28px;
+  }
+
+  .login__sub {
+    font-size: 14px;
   }
 }
