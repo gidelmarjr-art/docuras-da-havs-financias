@@ -1,0 +1,32 @@
+.recebimentos { padding-bottom: 32px; }
+.recebimentos h2 { font-size: 18px; }
+.recebimentos__cards { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; margin-bottom: 16px; }
+.recebimentos__grid { display: grid; grid-template-columns: minmax(300px, .85fr) minmax(0, 1.15fr); gap: 16px; align-items: start; }
+.recebimentos__formulario, .recebimentos__lista { padding: 20px; }
+.recebimentos__topo { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.recebimentos__topo p { margin-top: 4px; color: var(--tinta-suave); font-size: 14px; }
+.recebimentos__form { display: flex; flex-direction: column; gap: 14px; margin-top: 18px; }
+.recebimentos__linha { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.recebimentos__formas { min-width: 0; margin: 0; padding: 0; border: 0; }
+.recebimentos__formas legend { margin-bottom: 6px; padding: 0; font-size: 14px; font-weight: 600; }
+.recebimentos__formas-opcoes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.recebimentos__forma { min-height: 44px; padding: 0 8px; border: 1px solid var(--linha-forte); border-radius: var(--raio-campo); background: var(--fundo); color: var(--tinta); font-weight: 600; cursor: pointer; transition: border-color .15s, background .15s; }
+.recebimentos__forma:hover { border-color: var(--tinta-suave); }
+.recebimentos__forma--ativa { border-color: var(--destaque); background: var(--superficie); box-shadow: inset 0 0 0 1px var(--destaque); }
+.recebimentos__item { display: grid; grid-template-columns: minmax(0, 1fr) auto auto auto; align-items: center; gap: 10px; padding: 14px 0; border-top: 1px solid var(--linha); }
+.recebimentos__lista ul { margin-top: 14px; }
+.recebimentos__item-info { min-width: 0; }
+.recebimentos__item-info strong, .recebimentos__item-info small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.recebimentos__item-info small { margin-top: 2px; color: var(--tinta-suave); }
+.recebimentos__valor { font-weight: 700; text-align: right; color: var(--positivo); }
+.recebimentos__valor small { display: block; color: var(--tinta-suave); font-size: 11px; font-weight: 500; }
+@media (max-width: 1100px) { .recebimentos__cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 800px) { .recebimentos__grid { grid-template-columns: 1fr; } }
+@media (max-width: 480px) {
+  .recebimentos__cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .recebimentos__cards > :first-child { grid-column: 1 / -1; }
+  .recebimentos__linha { grid-template-columns: 1fr; }
+  .recebimentos__formas-opcoes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .recebimentos__item { grid-template-columns: minmax(0, 1fr) auto auto; gap: 8px; }
+  .recebimentos__valor { grid-column: 1; grid-row: 2; text-align: left; white-space: nowrap; }
+}

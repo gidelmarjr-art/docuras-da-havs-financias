@@ -1,0 +1,23 @@
+.cadastro__form {
+  padding: 22px;
+}
+.cadastro__form h2 {
+  font-size: 18px;
+}
+.cadastro__ajuda {
+  margin: 4px 0 16px;
+  max-width: 70ch;
+  color: var(--tinta-suave);
+}
+.cadastro__erro {
+  margin-top: 16px;
+}
+.cadastro__lista {
+  margin-top: 16px;
+}
+
+@media (max-width: 640px) {
+  .cadastro__form {
+    padding: 16px;
+  }
+}

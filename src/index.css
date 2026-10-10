@@ -1,0 +1,217 @@
+:root {
+  color-scheme: dark;
+
+  /* Superfícies: do mais escuro (menu lateral) ao mais claro (item em destaque) */
+  --lateral: #070708;
+  --fundo: #0b0b0c;
+  --superficie: #151517;
+  --fundo-suave: #1f1f22;
+  --elevado: #29292d;
+
+  /* Texto e linhas */
+  --tinta: #ececee;
+  --tinta-suave: #9a9aa2;
+  --linha: #2a2a2e;
+  --linha-forte: #3f3f45;
+
+  /* Destaque neutro (botões principais, aba ativa, barra de progresso) */
+  --destaque: #f1f1f2;
+  --destaque-forte: #d2d2d6;
+  --destaque-suave: #29292d;
+  --sobre-destaque: #0b0b0c;
+
+  /* Cores de situação: as únicas fora do preto e cinza, para não perder o sentido */
+  --positivo: #7fd3a4;
+  --positivo-suave: #15271d;
+  --ambar: #e3b45f;
+  --ambar-claro: #2b2314;
+  --vermelho: #f0857a;
+  --vermelho-claro: #2d1a18;
+
+  --sombra: 0 1px 2px rgba(0, 0, 0, 0.5), 0 14px 32px -18px rgba(0, 0, 0, 0.8);
+  --fonte-titulo: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+  --fonte-corpo: 'Figtree', 'Segoe UI', system-ui, sans-serif;
+  --raio-painel: 16px;
+  --raio-campo: 10px;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --lateral: #f6f6f7;
+  --fundo: #f1f1f3;
+  --superficie: #ffffff;
+  --fundo-suave: #ebebee;
+  --elevado: #dedee3;
+  --tinta: #17171a;
+  --tinta-suave: #62626c;
+  --linha: #d5d5da;
+  --linha-forte: #b9b9c1;
+  --destaque: #1a1a1d;
+  --destaque-forte: #35353a;
+  --destaque-suave: #dedee3;
+  --sobre-destaque: #ffffff;
+  --positivo: #207046;
+  --positivo-suave: #dff2e6;
+  --ambar: #9a6100;
+  --ambar-claro: #fff0cf;
+  --vermelho: #b3372d;
+  --vermelho-claro: #fde5e2;
+  --sombra: 0 1px 2px rgba(0, 0, 0, .08), 0 14px 32px -18px rgba(0, 0, 0, .18);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--tinta);
+  font-family: var(--fonte-corpo);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.55);
+  outline-offset: 2px;
+}
+
+.numero {
+  font-family: var(--fonte-titulo);
+  font-variant-numeric: tabular-nums;
+}
+
+.painel {
+  background: var(--superficie);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio-painel);
+  box-shadow: var(--sombra);
+}
+
+/* Botões */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 0 18px;
+  border: 1px solid transparent;
+  border-radius: var(--raio-campo);
+  background: transparent;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, opacity 0.15s;
+}
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.btn--primario {
+  background: var(--destaque);
+  color: var(--sobre-destaque);
+}
+.btn--primario:hover:not(:disabled) {
+  background: var(--destaque-forte);
+}
+.btn--secundario {
+  border-color: var(--linha);
+  background: var(--superficie);
+}
+.btn--secundario:hover:not(:disabled) {
+  border-color: var(--tinta-suave);
+}
+.btn--perigo {
+  color: var(--vermelho);
+  border-color: var(--vermelho-claro);
+  background: var(--superficie);
+}
+.btn--perigo:hover:not(:disabled) {
+  background: var(--vermelho-claro);
+}
+.btn--pequeno {
+  min-height: 34px;
+  padding: 0 12px;
+  font-size: 14px;
+}
+.btn--icone {
+  width: 34px;
+  min-height: 34px;
+  padding: 0;
+}
+
+/* Campos de formulário */
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.campo > span {
+  font-size: 14px;
+  font-weight: 600;
+}
+.campo input,
+.campo select {
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--linha-forte);
+  border-radius: var(--raio-campo);
+  background: var(--fundo);
+}
+.campo input:focus,
+.campo select:focus {
+  border-color: var(--destaque);
+  outline: 3px solid rgba(255, 255, 255, 0.16);
+  outline-offset: 0;
+}
+
+.aviso-erro {
+  padding: 10px 14px;
+  border-radius: var(--raio-campo);
+  background: var(--vermelho-claro);
+  color: var(--vermelho);
+  font-size: 14px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
